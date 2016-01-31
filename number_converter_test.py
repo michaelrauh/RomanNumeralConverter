@@ -68,5 +68,8 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert_numeral_to_arabic("MCMLXXXIX"), 1989)
         self.assertEqual(self.converter.convert_numeral_to_arabic("III"), 3)
 
+    def test_that_a_numeral_can_repeat_only_three_times(self):
+        self.assertEqual(self.converter.convert_numeral_to_arabic("XXXX"), 0)
+
 if __name__ == '__main__':
     unittest.main()
