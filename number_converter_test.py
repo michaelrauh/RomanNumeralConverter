@@ -18,6 +18,10 @@ class NumberConverterTest(unittest.TestCase):
 
     def test_conversion_using_basic_adding_rule(self):
         self.assertEqual(self.converter.convert(2), "II")
+        self.assertEqual(self.converter.convert(6), "VI")
+        self.assertEqual(self.converter.convert(20), "XX")
+        self.assertEqual(self.converter.convert(1001), "MI")
+        self.assertEqual(self.converter.convert(61), "LXI")
 
 
 if __name__ == '__main__':
