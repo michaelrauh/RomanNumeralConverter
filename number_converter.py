@@ -14,9 +14,14 @@ class NumberConverter():
     @staticmethod
     def convert_numeral_to_arabic(numeral):
         numeral_to_arabic = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+        numeral_to_arabic_subtract_patterns = {"IV": 4, "IX": 9, "XL": 40, "XC": 90, "CD": 400, "CM": 900}
 
         arabic = 0
         while numeral != "":
-            arabic += numeral_to_arabic[numeral[0]]
-            numeral = numeral[1:]
+            if numeral[:2] in numeral_to_arabic_subtract_patterns:
+                arabic += numeral_to_arabic_subtract_patterns[numeral[:2]]
+                numeral = numeral[2:]
+            else:
+                arabic += numeral_to_arabic[numeral[0]]
+                numeral = numeral[1:]
         return arabic
