@@ -41,5 +41,8 @@ class NumberConverterTest(unittest.TestCase):
     def test_overflow_numbers(self):
         self.assertEqual(self.converter.convert_arabic_to_numeral(5000), "")
 
+    def test_basic_conversion_from_numeral_to_arabic(self):
+        self.assertEqual(self.converter.convert_numeral_to_arabic("I"), 1)
+
 if __name__ == '__main__':
     unittest.main()
