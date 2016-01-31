@@ -34,5 +34,9 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert(1989), "MCMLXXXIX")
         self.assertEqual(self.converter.convert(3), "III")
 
+    def test_forbidden_numbers(self):
+        self.assertEqual(self.converter.convert(-1), "")
+        self.assertEqual(self.converter.convert(0), "")
+
 if __name__ == '__main__':
     unittest.main()
