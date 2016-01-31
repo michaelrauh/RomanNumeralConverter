@@ -81,6 +81,7 @@ class NumberConverterTest(unittest.TestCase):
 
     def test_that_only_one_subtraction_can_be_made_per_numeral(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("XXC"), 0)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("IXC"), 0)
 
 if __name__ == '__main__':
     unittest.main()
