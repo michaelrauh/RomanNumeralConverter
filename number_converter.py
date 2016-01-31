@@ -10,3 +10,7 @@ class NumberConverter():
             numeral += arabic_to_numeral[highest_below_arabic]
             arabic -= highest_below_arabic
         return numeral
+
+    @staticmethod
+    def convert_numeral_to_arabic(numeral):
+        pass
