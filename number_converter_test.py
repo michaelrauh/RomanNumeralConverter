@@ -70,6 +70,9 @@ class NumberConverterTest(unittest.TestCase):
 
     def test_that_a_numeral_can_repeat_only_three_times(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("XXXX"), 0)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("IIII"), 0)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("CCCC"), 0)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("MMMM"), 0)
 
 if __name__ == '__main__':
     unittest.main()
