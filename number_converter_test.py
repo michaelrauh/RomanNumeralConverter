@@ -38,5 +38,8 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert(-1), "")
         self.assertEqual(self.converter.convert(0), "")
 
+    def test_overflow_numbers(self):
+        self.assertEqual(self.converter.convert(5000), "")
+
 if __name__ == '__main__':
     unittest.main()
