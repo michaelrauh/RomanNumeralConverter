@@ -65,6 +65,8 @@ class NumberConverterTest(unittest.TestCase):
 
     def test_arbitrary_conversion_for_numeral_to_arabic(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("MLXVI"), 1066)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("MCMLXXXIX"), 1989)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("III"), 3)
 
 if __name__ == '__main__':
     unittest.main()
