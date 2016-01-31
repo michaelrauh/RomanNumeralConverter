@@ -52,6 +52,10 @@ class NumberConverterTest(unittest.TestCase):
 
     def test_basic_add_case_for_numeral_to_arabic(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("II"), 2)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("VI"), 6)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("XX"), 20)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("MI"), 1001)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("LXI"), 61)
 
 if __name__ == '__main__':
     unittest.main()
