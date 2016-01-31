@@ -74,5 +74,8 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert_numeral_to_arabic("CCCC"), 0)
         self.assertEqual(self.converter.convert_numeral_to_arabic("MMMM"), 0)
 
+    def test_that_certain_numerals_may_not_repeat(self):
+        self.assertEqual(self.converter.convert_numeral_to_arabic("VV"), 0)
+
 if __name__ == '__main__':
     unittest.main()
