@@ -22,11 +22,15 @@ class NumberConverter():
                 return 0
 
         arabic = 0
+        previous = float("inf")
         while numeral != "":
             if numeral[:2] in numeral_to_arabic_subtract_patterns:
                 arabic += numeral_to_arabic_subtract_patterns[numeral[:2]]
+                if previous < numeral_to_arabic_subtract_patterns[numeral[:2]]:
+                    return 0
                 numeral = numeral[2:]
             else:
                 arabic += numeral_to_arabic[numeral[0]]
                 numeral = numeral[1:]
+            previous = arabic
         return arabic
