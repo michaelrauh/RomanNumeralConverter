@@ -83,5 +83,6 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert_numeral_to_arabic("XXC"), 0)
         self.assertEqual(self.converter.convert_numeral_to_arabic("IXC"), 0)
 
+
 if __name__ == '__main__':
     unittest.main()
