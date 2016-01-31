@@ -11,6 +11,7 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert(1), "I")
         self.assertEqual(self.converter.convert(5), "V")
         self.assertEqual(self.converter.convert(10), "X")
+        self.assertEqual(self.converter.convert(50), "L")
 
 
 if __name__ == '__main__':
