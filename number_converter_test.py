@@ -7,10 +7,8 @@ class NumberConverterTest(unittest.TestCase):
     def setUp(self):
         self.converter = number_converter.NumberConverter()
 
-    def test_that_one_is_i(self):
+    def test_that_basic_numeral_definitions_work(self):
         self.assertEqual(self.converter.convert(1), "I")
-
-    def test_that_five_is_V(self):
         self.assertEqual(self.converter.convert(5), "V")
 
 if __name__ == '__main__':
