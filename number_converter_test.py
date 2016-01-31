@@ -10,6 +10,8 @@ class NumberConverterTest(unittest.TestCase):
     def test_that_basic_numeral_definitions_work(self):
         self.assertEqual(self.converter.convert(1), "I")
         self.assertEqual(self.converter.convert(5), "V")
+        self.assertEqual(self.converter.convert(10), "X")
+
 
 if __name__ == '__main__':
     unittest.main()
