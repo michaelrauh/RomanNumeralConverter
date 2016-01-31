@@ -25,7 +25,9 @@ class NumberConverterTest(unittest.TestCase):
 
     def test_conversion_using_basic_subtraction_rule(self):
         self.assertEqual(self.converter.convert(4), "IV")
-
+        self.assertEqual(self.converter.convert(9), "IX")
+        self.assertEqual(self.converter.convert(40), "XL")
+        self.assertEqual(self.converter.convert(900), "CM")
 
 if __name__ == '__main__':
     unittest.main()
