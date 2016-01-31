@@ -36,3 +36,4 @@ class NumberConverter():
         for pattern in illegal_patterns:
             if pattern in numeral:
                 return True
+        return False
