@@ -29,5 +29,10 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert(40), "XL")
         self.assertEqual(self.converter.convert(900), "CM")
 
+    def test_conversion_of_arbitrary_number(self):
+        self.assertEqual(self.converter.convert(1066), "MLXVI")
+        self.assertEqual(self.converter.convert(1989), "MCMLXXXIX")
+        self.assertEqual(self.converter.convert(3), "III")
+
 if __name__ == '__main__':
     unittest.main()
