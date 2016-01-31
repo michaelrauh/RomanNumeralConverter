@@ -16,6 +16,9 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert(500), "D")
         self.assertEqual(self.converter.convert(1000), "M")
 
+    def test_conversion_using_basic_adding_rule(self):
+        self.assertEqual(self.converter.convert(2), "II")
+
 
 if __name__ == '__main__':
     unittest.main()
