@@ -13,6 +13,7 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert(10), "X")
         self.assertEqual(self.converter.convert(50), "L")
         self.assertEqual(self.converter.convert(100), "C")
+        self.assertEqual(self.converter.convert(500), "D")
 
 
 if __name__ == '__main__':
