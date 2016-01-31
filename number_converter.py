@@ -14,4 +14,9 @@ class NumberConverter():
     @staticmethod
     def convert_numeral_to_arabic(numeral):
         numeral_to_arabic = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
-        return numeral_to_arabic[numeral]
+
+        arabic = 0
+        while numeral != "":
+            arabic += numeral_to_arabic[numeral[0]]
+            numeral = numeral[1:]
+        return arabic
