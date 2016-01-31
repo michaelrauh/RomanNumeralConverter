@@ -1,2 +1,4 @@
 class NumberConverter():
-    pass
+
+    def convert(self, number):
+        pass
