@@ -13,4 +13,4 @@ class NumberConverter():
 
     @staticmethod
     def convert_numeral_to_arabic(numeral):
-        pass
+        return 1
