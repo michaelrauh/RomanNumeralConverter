@@ -44,6 +44,11 @@ class NumberConverterTest(unittest.TestCase):
     def test_basic_conversion_from_numeral_to_arabic(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("I"), 1)
         self.assertEqual(self.converter.convert_numeral_to_arabic("V"), 5)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("X"), 10)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("L"), 50)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("C"), 100)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("D"), 500)
+        self.assertEqual(self.converter.convert_numeral_to_arabic("M"), 1000)
 
 if __name__ == '__main__':
     unittest.main()
