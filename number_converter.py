@@ -5,6 +5,8 @@ class NumberConverter():
                                   400: "CD", 500: "D", 900: "CM", 1000: "M"}
         self.NUMERAL_TO_ARABIC = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
         self.NUMERAL_TO_ARABIC_SUBTRACT_PATTERNS = {"IV": 4, "IX": 9, "XL": 40, "XC": 90, "CD": 400, "CM": 900}
+        self.ILLEGAL_PATTERNS = ["IIII", "XXXX", "CCCC", "MMMM", "VV", "LL", "DD", "IXL", "IXC", "XCD", "XCM", "IIV",
+                                 "IIX", "XXL", "XXC", "CCD", "CCM"]
 
     def convert_arabic_to_numeral(self, arabic):
         numeral = ""
@@ -16,7 +18,7 @@ class NumberConverter():
 
     def convert_numeral_to_arabic(self, numeral):
 
-        if NumberConverter.check_for_illegal_pattern(numeral):
+        if self.check_for_illegal_pattern(numeral):
             return 0
 
         arabic = 0
@@ -29,11 +31,8 @@ class NumberConverter():
                 numeral = numeral[1:]
         return arabic
 
-    @staticmethod
-    def check_for_illegal_pattern(numeral):
-        illegal_patterns = ["IIII", "XXXX", "CCCC", "MMMM", "VV", "LL", "DD", "IXL", "IXC", "XCD", "XCM", "IIV", "IIX",
-                            "XXL", "XXC", "CCD", "CCM"]
-        for pattern in illegal_patterns:
+    def check_for_illegal_pattern(self, numeral):
+        for pattern in self.ILLEGAL_PATTERNS:
             if pattern in numeral:
                 return True
         return False
