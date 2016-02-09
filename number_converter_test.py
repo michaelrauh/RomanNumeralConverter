@@ -95,9 +95,13 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert_numeral_to_arabic("LL"), 0)
         self.assertEqual(self.converter.convert_numeral_to_arabic("DD"), 0)
 
-    def test_that_only_one_subtraction_can_be_made_per_numeral(self):
+    def test_that_only_one_subtraction_can_be_made_per_numeral_repeated_case(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("XXC"), 0)
+
+    def test_that_only_one_subtraction_can_be_made_per_numeral_ladder_case(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("IXC"), 0)
+
+    def test_that_only_one_subtraction_can_be_made_per_numeral_multiple_mistakes_case(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("IXXL"), 0)
         self.assertEqual(self.converter.convert_numeral_to_arabic("IXXXC"), 0)
 
