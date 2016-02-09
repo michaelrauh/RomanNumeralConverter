@@ -40,8 +40,10 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert_arabic_to_numeral(1989), "MCMLXXXIX")
         self.assertEqual(self.converter.convert_arabic_to_numeral(3), "III")
 
-    def test_forbidden_numbers(self):
+    def test_forbidden_numbers_negative(self):
         self.assertEqual(self.converter.convert_arabic_to_numeral(-1), "")
+
+    def test_forbidden_numbers_zero(self):
         self.assertEqual(self.converter.convert_arabic_to_numeral(0), "")
 
     def test_overflow_numbers(self):
