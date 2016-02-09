@@ -16,10 +16,12 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert_arabic_to_numeral(500), "D")
         self.assertEqual(self.converter.convert_arabic_to_numeral(1000), "M")
 
-    def test_conversion_using_basic_adding_rule(self):
+    def test_conversion_using_basic_adding_rule_doubled_characters_only(self):
         self.assertEqual(self.converter.convert_arabic_to_numeral(2), "II")
-        self.assertEqual(self.converter.convert_arabic_to_numeral(6), "VI")
         self.assertEqual(self.converter.convert_arabic_to_numeral(20), "XX")
+
+    def test_conversion_using_basic_adding_rule_generic(self):
+        self.assertEqual(self.converter.convert_arabic_to_numeral(6), "VI")
         self.assertEqual(self.converter.convert_arabic_to_numeral(1001), "MI")
         self.assertEqual(self.converter.convert_arabic_to_numeral(61), "LXI")
 
