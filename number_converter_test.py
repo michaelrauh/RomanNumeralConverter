@@ -58,11 +58,15 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert_numeral_to_arabic("D"), 500)
         self.assertEqual(self.converter.convert_numeral_to_arabic("M"), 1000)
 
-    def test_basic_add_case_for_numeral_to_arabic(self):
+    def test_basic_add_case_for_numeral_to_arabic_repeated_numbers_only(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("II"), 2)
-        self.assertEqual(self.converter.convert_numeral_to_arabic("VI"), 6)
         self.assertEqual(self.converter.convert_numeral_to_arabic("XX"), 20)
+
+    def test_basic_add_case_for_numeral_to_arabic_add_I_only(self):
+        self.assertEqual(self.converter.convert_numeral_to_arabic("VI"), 6)
         self.assertEqual(self.converter.convert_numeral_to_arabic("MI"), 1001)
+
+    def test_basic_add_case_for_numeral_to_arabic_multiple_additions(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("LXI"), 61)
 
     def test_basic_subtract_case_for_numeral_to_arabic(self):
