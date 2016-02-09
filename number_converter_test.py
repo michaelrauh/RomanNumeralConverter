@@ -69,10 +69,14 @@ class NumberConverterTest(unittest.TestCase):
     def test_basic_add_case_for_numeral_to_arabic_multiple_additions(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("LXI"), 61)
 
-    def test_basic_subtract_case_for_numeral_to_arabic(self):
+    def test_basic_subtract_case_for_numeral_to_arabic_I_only(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("IV"), 4)
         self.assertEqual(self.converter.convert_numeral_to_arabic("IX"), 9)
+
+    def test_basic_subtract_case_for_numeral_to_arabic_X_only(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("XL"), 40)
+
+    def test_basic_subtract_case_for_numeral_to_arabic_C_only(self):
         self.assertEqual(self.converter.convert_numeral_to_arabic("CM"), 900)
 
     def test_arbitrary_conversion_for_numeral_to_arabic(self):
