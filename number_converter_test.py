@@ -25,10 +25,14 @@ class NumberConverterTest(unittest.TestCase):
         self.assertEqual(self.converter.convert_arabic_to_numeral(1001), "MI")
         self.assertEqual(self.converter.convert_arabic_to_numeral(61), "LXI")
 
-    def test_conversion_using_basic_subtraction_rule(self):
+    def test_conversion_using_subtract_I_rule(self):
         self.assertEqual(self.converter.convert_arabic_to_numeral(4), "IV")
         self.assertEqual(self.converter.convert_arabic_to_numeral(9), "IX")
+
+    def test_conversion_using_subtract_X_rule(self):
         self.assertEqual(self.converter.convert_arabic_to_numeral(40), "XL")
+
+    def test_conversion_using_subtract_C_rule(self):
         self.assertEqual(self.converter.convert_arabic_to_numeral(900), "CM")
 
     def test_conversion_of_arbitrary_number(self):
